@@ -33,8 +33,6 @@ class SignUpActivity : AppCompatActivity() {
         val password: String = editTextPassword.text.toString()
         val confirmPassword: String = editTextConfirmPassword.text.toString()
 
-        // ... (Validation checks, similar to your existing code)
-
         val registrationData = RegistrationData(email, password, "YourName", 25, "male", 170, 70, "gain")
 
         // Initialize Retrofit
@@ -52,7 +50,7 @@ class SignUpActivity : AppCompatActivity() {
             override fun onResponse(call: Call<Response<String>>, response: Response<Response<String>>) {
                 if (response.isSuccessful) {
                     // Handle the successful response
-                    val result = response.body()?.body() // Assuming the response has a "body" field
+                    val result = response.body()?.body()
                     Toast.makeText(applicationContext, result, Toast.LENGTH_SHORT).show()
                 } else if (response.code() == 409) {
                     // Conflict: User with the same email already exists
