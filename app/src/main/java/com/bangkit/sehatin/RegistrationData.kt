@@ -8,5 +8,6 @@ data class RegistrationData(
     val gender: String,
     val height: Int,
     val weight: Int,
-    val goal: String
+    val activity_level: String,
+    val goal: String = "",
 )

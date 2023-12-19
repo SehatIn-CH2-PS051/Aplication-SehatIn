@@ -8,4 +8,7 @@ import retrofit2.http.POST
 interface ApiService {
     @POST("/register")
     fun signUp(@Body registrationData: RegistrationData): Call<Response<String>>
+
+    @POST("/login")
+    fun logIn(@Body loginData: LoginData): Call<Response<String>>
 }

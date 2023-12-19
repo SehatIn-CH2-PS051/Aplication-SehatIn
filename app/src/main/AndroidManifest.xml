@@ -15,6 +15,12 @@
         android:theme="@style/Theme.Sehatin"
         tools:targetApi="31">
         <activity
+            android:name=".PurposeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InformationActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.addFood.CameraActivity"
             android:exported="false" />
         <activity
