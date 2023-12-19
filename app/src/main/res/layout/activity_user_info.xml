@@ -141,14 +141,14 @@
         app:layout_constraintVertical_bias="0.238" />
 
     <TextView
-        android:id="@+id/titleAsupanKalori"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Asupan Kalori Harian yang \nKamu Butuhkan Adalah"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBMR" />
+            android:id="@+id/titleAsupanKalori"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Asupan Kalori Harian yang \nKamu Butuhkan Adalah"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBMR" android:textAlignment="center"/>
 
     <TextView
         android:id="@+id/asupanKalori"

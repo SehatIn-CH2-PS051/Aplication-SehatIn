@@ -1,25 +1,27 @@
 <resources>
-    <string name="app_name">Sehatin</string>
-    <string name="sign_up">Sign Up</string>
-    <string name="log_in">Log In</string>
-    <string name="dsadasdkjadas">dsadasdkjadas</string>
-    <string name="Title_kcal">Berdasarkan data diri kamu</string>
-    <string name="title_activity_information">InformationActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-    <string name="title_activity_main2">MainActivity2</string>
-    <string name="title_activity_pupose">PuposeActivity</string>
-    <string name="intro">Selamat datang di halaman Informasi, di sini Anda dapat memasukkan detail pribadi seperti tinggi, berat badan, jenis kelamin, dan tanggal lahir untuk menyesuaikan pengalaman Anda.</string>
-    <string name="jenis">Jenis Kelamin</string>
-    <string name="usia">Usia</string>
-    <string name="tinggi">Tinggi</string>
-    <string name="berat">Berat</string>
-    <string name="level_aktivitas">Level Aktivitas</string>
-    <string name="lanjut">Lanjut</string>
-    <string name="menjaga">Menjaga berat \n badan</string>
-    <string name="menurutkan">Menurunkan\n berat badan</string>
-    <string name="menaikkan">Menaikkan berat \n badan</string>
+	<string name="app_name">Sehatin</string>
+	<string name="sign_up">Sign Up</string>
+	<string name="log_in">Log In</string>
+	<string name="dsadasdkjadas">dsadasdkjadas</string>
+	<string name="Title_kcal">Berdasarkan data diri kamu</string>
+	<string name="title_activity_information">InformationActivity</string>
+	<!-- Strings used for fragments for navigation -->
+	<string name="first_fragment_label">First Fragment</string>
+	<string name="second_fragment_label">Second Fragment</string>
+	<string name="next">Next</string>
+	<string name="previous">Previous</string>
+	<string name="title_activity_main2">MainActivity2</string>
+	<string name="title_activity_pupose">PuposeActivity</string>
+	<string name="intro">Selamat datang di halaman Informasi, di sini Anda dapat memasukkan detail pribadi seperti
+		tinggi, berat badan, jenis kelamin, dan tanggal lahir untuk menyesuaikan pengalaman Anda.
+	</string>
+	<string name="jenis">Jenis Kelamin</string>
+	<string name="usia">Usia</string>
+	<string name="tinggi">Tinggi</string>
+	<string name="berat">Berat</string>
+	<string name="level_aktivitas">Level Aktivitas</string>
+	<string name="lanjut">Lanjut</string>
+	<string name="menjaga">Menjaga berat \n badan</string>
+	<string name="menurutkan">Menurunkan\n berat badan</string>
+	<string name="menaikkan">Menaikkan berat \n badan</string>
 </resources>
