@@ -7,14 +7,16 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bangkit.sehatin.data.network.retrofit.ApiConfig
+import com.bangkit.sehatin.data.network.retrofit.ApiService
 import com.bangkit.sehatin.view.Dashboard.DashboardActivity
 import okhttp3.ResponseBody
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import org.json.JSONObject
 
 class LogInActivity : AppCompatActivity() {
 
@@ -36,25 +38,20 @@ class LogInActivity : AppCompatActivity() {
         val password: String = editTextPassword.text.toString()
 
         // Inisialisasi Retrofit
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://sehatin-api-64zqryr67a-et.a.run.app")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
         // Buat ApiService
-        val apiService = retrofit.create(ApiService::class.java)
+        val apiService = ApiConfig.getApiService()
 
         // Panggil API login
         val call = apiService.logIn(LoginData(email, password))
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                 if (response.isSuccessful) {
+               if (response.isSuccessful) {
                    val responseBody = response.body()?.string()
-                    val json = responseBody?.let { JSONObject(it) }
-                    val token = json?.optString("token")
-                     saveTokenToLocalStorage(token)
-                    navigateToNextActivity()
-                    Toast.makeText(applicationContext, "Login berhasil", Toast.LENGTH_SHORT).show()
+                   val json = responseBody?.let { JSONObject(it) }
+                   val token = json?.optString("token")
+                   saveTokenToLocalStorage(token)
+                   navigateToNextActivity()
+                   Toast.makeText(applicationContext, "Login berhasil", Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -64,7 +61,7 @@ class LogInActivity : AppCompatActivity() {
             }
         })
     }
-      private fun saveTokenToLocalStorage(token: String?) {
+    private fun saveTokenToLocalStorage(token: String?) {
         // Use SharedPreferences to store the token
         val sharedPref = getSharedPreferences("sehatin", Context.MODE_PRIVATE)
         val editor = sharedPref.edit()

@@ -2,9 +2,10 @@ package com.bangkit.sehatin
 
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import com.bangkit.sehatin.view.Dashboard.DashboardActivity
+import com.bangkit.sehatin.view.addFood.AddFoodActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,4 +33,10 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, LogInActivity::class.java)
         startActivity(intent)
     }
+
+    fun goToCameraActivity(view: android.view.View) {
+        val intent = Intent(this, AddFoodActivity::class.java)
+        startActivity(intent)
+    }
+
 }

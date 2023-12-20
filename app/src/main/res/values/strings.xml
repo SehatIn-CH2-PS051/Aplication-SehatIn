@@ -24,4 +24,8 @@
 	<string name="menjaga">Menjaga berat \n badan</string>
 	<string name="menurutkan">Menurunkan\n berat badan</string>
 	<string name="menaikkan">Menaikkan berat \n badan</string>
+	<string name="nama_makanan">Nama</string>
+	<string name="txtKarbohidrat">Karbohidrat</string>
+	<string name="txtLemak">Lemak</string>
+	<string name="txtjumlahkalori">jumlah kalori</string>
 </resources>

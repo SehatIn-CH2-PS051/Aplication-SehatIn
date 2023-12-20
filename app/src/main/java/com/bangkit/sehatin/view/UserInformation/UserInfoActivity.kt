@@ -6,8 +6,9 @@ import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.bangkit.sehatin.ApiService
 import com.bangkit.sehatin.R
+import com.bangkit.sehatin.data.network.retrofit.ApiConfig
+import com.bangkit.sehatin.data.network.retrofit.ApiService
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
@@ -31,15 +32,13 @@ class UserInfoActivity : AppCompatActivity() {
         val bmiText : TextView = findViewById<TextView>(R.id.txtBMR)
         val kkalText : TextView = findViewById<TextView>(R.id.asupanKalori)
 
-        // Inisialisasi Retrofit dengan interceptor
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://sehatin-api-64zqryr67a-et.a.run.app")
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(createOkHttpClient())  // Tambahkan client dengan interceptor
-            .build()
+        // Ambil token dari SharedPreferences atau dari tempat penyimpanan lainnya
+        val sharedPreferences = getSharedPreferences("sehatin", MODE_PRIVATE)
+        val token = sharedPreferences.getString("token", "")
 
+        // Inisialisasi Retrofit dengan interceptor
         // Buat ApiService
-        val apiService = retrofit.create(ApiService::class.java)
+        val apiService = ApiConfig.getApiWithTokenService(token.toString())
 
         // Panggil API getUserInfo
         val call = apiService.getUserInfo()
