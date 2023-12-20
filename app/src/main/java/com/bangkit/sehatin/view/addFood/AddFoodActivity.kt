@@ -63,13 +63,19 @@ class AddFoodActivity : AppCompatActivity() {
             Log.d("Image File", "showImage: ${imageFile.path}")
 
             runBlocking {
-                val response = addImage(imageFile)
-                if (response.code == 200) {
-                    // Pass image data to FoodResultActivity
-                    val intent = Intent(this@AddFoodActivity, FoodResultActivity::class.java)
-                    intent.putExtra("imageUri", currentImageUri.toString())  // Pass image URI as a string
-                    intent.putExtra("data", response)
-                    startActivity(intent)
+                try {
+                    val response = addImage(imageFile)
+                    if (response.code == 200) {
+                        showDialogUpload("Berhasil,${response.status}")
+                        // Pass image data to FoodResultActivity
+                        val intent = Intent(this@AddFoodActivity, FoodResultActivity::class.java)
+                        intent.putExtra("imageUri", currentImageUri.toString())  // Pass image URI as a string
+                        intent.putExtra("data", response)
+                        startActivity(intent)
+                    }
+                    showDialogUpload("Gambar yang anda masukkan tidak bisa di deteksi,${response.status}")
+                } catch(e : Exception){
+                    showDialogUpload("Gambar yang anda masukkan tidak bisa di deteksi,${e.message}")
                 }
             }
         }
