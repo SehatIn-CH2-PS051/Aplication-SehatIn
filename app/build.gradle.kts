@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.bangkit.sehatin"
-        minSdk = 24
+        minSdk = 30
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -38,10 +38,11 @@ android {
         viewBinding = true
         buildConfig = true
     }
-
 }
 
+
 dependencies {
+//    implementation ("com.github.AnyChart:AnyChart-Android:1.1.5")
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -58,7 +59,5 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
 
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2") //untuk lifecycleScope
-
-
 
 }

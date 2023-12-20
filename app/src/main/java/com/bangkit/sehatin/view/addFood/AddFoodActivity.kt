@@ -7,23 +7,18 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
-import com.bangkit.sehatin.R
 import com.bangkit.sehatin.data.network.response.FoodResponse
 import com.bangkit.sehatin.data.network.retrofit.ApiConfig
 import com.bangkit.sehatin.data.network.retrofit.ApiService
 import com.bangkit.sehatin.databinding.ActivityAddFoodBinding
 import com.bangkit.sehatin.utils.Utils
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
-import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -46,7 +41,11 @@ class AddFoodActivity : AppCompatActivity() {
     }
 
     suspend fun addImage(imageFile: File): FoodResponse {
-        apiService = ApiConfig.getApiService()
+        // Ambil token dari SharedPreferences atau dari tempat penyimpanan lainnya
+        val sharedPreferences = getSharedPreferences("sehatin", MODE_PRIVATE)
+        val token = sharedPreferences.getString("token", "")
+
+        apiService = ApiConfig.getApiWithTokenService(token.toString())
         val requestImageFile = imageFile.asRequestBody("image/jpg".toMediaType())
         val multipartBody = MultipartBody.Part.createFormData(
             "file",
@@ -54,9 +53,7 @@ class AddFoodActivity : AppCompatActivity() {
             requestImageFile
         )
 
-        val response = apiService!!.uploadImage(multipartBody)
-
-        return response
+        return apiService!!.uploadImage(multipartBody)
 
     }
 
