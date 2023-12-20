@@ -29,7 +29,7 @@
     <View
         android:id="@+id/view"
         android:layout_width="390dp"
-        android:layout_height="390dp"
+        android:layout_height="450dp"
         android:background="@drawable/rounded_view_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +39,7 @@
         app:layout_constraintVertical_bias="0.469" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/previewImageView"
         android:layout_width="194dp"
         android:layout_height="192dp"
         android:layout_marginTop="16dp"
@@ -50,7 +50,7 @@
         app:srcCompat="@drawable/makanan" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/cameraButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
@@ -60,21 +60,32 @@
         android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/previewImageView" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/galleryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="56dp"
         android:drawableLeft="@drawable/logo_upload"
-        android:text="Upload"
+        android:text="Gallery"
         android:background="#7FF584"
         android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/previewImageView"
         app:layout_constraintVertical_bias="0.511" />
+
+    <Button
+        android:id="@+id/uploadUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload"
+        android:background="#7FF584"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cameraButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
