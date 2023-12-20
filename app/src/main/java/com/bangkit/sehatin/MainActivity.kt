@@ -25,4 +25,5 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, AddFoodActivity::class.java)
         startActivity(intent)
     }
+
 }
