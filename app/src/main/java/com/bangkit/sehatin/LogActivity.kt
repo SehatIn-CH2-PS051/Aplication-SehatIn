@@ -1,13 +1,16 @@
 package com.bangkit.sehatin
 
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
+import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.bangkit.sehatin.data.network.retrofit.ApiService
+import com.bangkit.sehatin.view.LSTMInfo.LSTMActivity
 import okhttp3.ResponseBody
 import org.json.JSONException
 import org.json.JSONObject
@@ -35,6 +38,12 @@ class LogActivity : AppCompatActivity() {
 
         // Contoh pemanggilan API getUserInfo
         getUserInfo()
+    }
+
+    fun onImageClick(view: View) {
+        // Intent untuk pindah ke LSTMActivity
+        val intent = Intent(this, LSTMActivity::class.java)
+        startActivity(intent)
     }
 
     private fun getUserInfo() {
