@@ -19,6 +19,9 @@ interface ApiService {
     @GET("/user")
     fun getUserInfo(): Call<ResponseBody>
 
+    @GET("/lstm")
+    fun getLSTMChart(): Call<ResponseBody>
+
     @Multipart
     @POST("/food")
     suspend fun uploadImage(

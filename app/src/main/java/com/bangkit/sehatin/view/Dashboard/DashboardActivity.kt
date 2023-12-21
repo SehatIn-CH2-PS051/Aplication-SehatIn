@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.bangkit.sehatin.LogInActivity
 import com.bangkit.sehatin.R
+import com.bangkit.sehatin.view.LSTMInfo.LSTMActivity
 import com.bangkit.sehatin.view.UserInformation.UserInfoActivity
 import com.bangkit.sehatin.view.addFood.AddFoodActivity
 
@@ -52,7 +53,7 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(intent)
         }
         logMenu.setOnClickListener {
-            val intent = Intent(this, UserInfoActivity::class.java)
+            val intent = Intent(this, LSTMActivity::class.java)
             startActivity(intent)
         }
     }
