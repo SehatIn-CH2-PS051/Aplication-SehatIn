@@ -16,11 +16,17 @@ interface ApiService {
     @POST("/login")
     fun logIn(@Body loginData: LoginData): Call<ResponseBody>
 
+    @POST("/eat-log")
+    fun EatLog(): Call<ResponseBody>
+
     @GET("/user")
     fun getUserInfo(): Call<ResponseBody>
 
     @GET("/lstm")
     fun getLSTMChart(): Call<ResponseBody>
+
+    @GET("/eat-log")
+    fun getEatLog(): Call<ResponseBody>
 
     @Multipart
     @POST("/food")

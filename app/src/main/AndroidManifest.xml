@@ -18,6 +18,20 @@
 			android:theme="@style/Theme.Sehatin"
 			tools:targetApi="31">
 		<activity
+			android:name=".LogActivity"
+			android:exported="true">
+
+		</activity>
+		<activity
+			android:name=".ChatBotMessage"
+			android:exported="true">
+
+		</activity>
+		<activity
+			android:name=".ChatBoxActivity"
+			android:exported="true">
+		</activity>
+		<activity
 				android:name=".view.LSTMInfo.LSTMActivity"
 				android:exported="false"/>
 		<activity

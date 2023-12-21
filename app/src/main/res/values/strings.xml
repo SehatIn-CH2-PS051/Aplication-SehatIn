@@ -27,5 +27,6 @@
 	<string name="nama_makanan">Nama</string>
 	<string name="txtKarbohidrat">Karbohidrat</string>
 	<string name="txtLemak">Lemak</string>
+	<string name="title_activity_chat_box">ChatBoxActivity</string>
 	<string name="txtjumlahkalori">jumlah kalori</string>
 </resources>

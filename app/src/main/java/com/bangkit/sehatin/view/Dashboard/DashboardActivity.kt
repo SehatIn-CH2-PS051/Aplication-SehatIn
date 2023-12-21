@@ -5,11 +5,14 @@ import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import com.bangkit.sehatin.ChatBoxActivity
+import com.bangkit.sehatin.LogActivity
 import com.bangkit.sehatin.LogInActivity
 import com.bangkit.sehatin.R
 import com.bangkit.sehatin.view.LSTMInfo.LSTMActivity
 import com.bangkit.sehatin.view.UserInformation.UserInfoActivity
 import com.bangkit.sehatin.view.addFood.AddFoodActivity
+import com.bangkit.sehatin.view.addFood.CameraActivity
 
 class DashboardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,11 +52,11 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(intent)
         }
         chatMenu.setOnClickListener {
-            val intent = Intent(this, UserInfoActivity::class.java)
+            val intent = Intent(this, ChatBoxActivity::class.java)
             startActivity(intent)
         }
         logMenu.setOnClickListener {
-            val intent = Intent(this, LSTMActivity::class.java)
+            val intent = Intent(this, LogActivity::class.java)
             startActivity(intent)
         }
     }
