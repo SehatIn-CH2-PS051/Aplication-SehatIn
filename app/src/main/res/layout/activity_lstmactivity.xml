@@ -5,11 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="#FFFFFF"
     tools:context=".view.addFood.FoodResultActivity">
 
     <LinearLayout
         android:orientation="vertical"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
@@ -24,7 +25,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Calories Chart"
+                android:textColor="@android:color/black"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:layout_marginBottom="8dp"/>
 
@@ -34,7 +37,7 @@
                 android:id="@+id/caloriesChart"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"/>
-             <ProgressBar
+            <ProgressBar
                 android:id="@+id/caloriesProgressBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -52,7 +55,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Macro Chart"
+                android:textColor="@android:color/black"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:layout_marginBottom="8dp"/>
 
@@ -62,7 +67,7 @@
                 android:id="@+id/macroChart"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"/>
-             <ProgressBar
+            <ProgressBar
                 android:id="@+id/macroProgressBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -80,7 +85,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Predicted Chart"
+                android:textColor="@android:color/black"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:layout_marginBottom="8dp"/>
 

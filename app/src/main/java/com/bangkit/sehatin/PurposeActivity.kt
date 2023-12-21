@@ -1,11 +1,13 @@
 package com.bangkit.sehatin
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bangkit.sehatin.data.network.retrofit.ApiService
+import com.bangkit.sehatin.view.Dashboard.DashboardActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -86,6 +88,11 @@ class PurposeActivity : AppCompatActivity() {
                     // Handle response yang berhasil (jika diperlukan)
                     val result = response.body()?.body() // Assuming the response has a "body" field
                     Toast.makeText(applicationContext, "Registrasi berhasil. Response: $result", Toast.LENGTH_SHORT).show()
+
+                    // Buka DashboardActivity setelah registrasi berhasil
+                    val intent = Intent(this@PurposeActivity, DashboardActivity::class.java)
+                    startActivity(intent)
+                    finish() // Optional: menutup PurposeActivity agar tidak bisa kembali menggunakan tombol back
                 } else {
                     // Handle response yang tidak berhasil (jika diperlukan)
                     Toast.makeText(applicationContext, "Registrasi gagal. Error: ${response.code()}", Toast.LENGTH_SHORT).show()
