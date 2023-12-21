@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.bangkit.sehatin.data.network.retrofit.ApiConfig
 import com.bangkit.sehatin.data.network.retrofit.ApiService
 import com.bangkit.sehatin.view.LSTMInfo.LSTMActivity
 import okhttp3.ResponseBody
@@ -33,14 +34,13 @@ class LogActivity : AppCompatActivity() {
             val intent = Intent(this, LSTMActivity::class.java)
             startActivity(intent)
         }
-        // Inisialisasi Retrofit
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://sehatin-api-64zqryr67a-et.a.run.app")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+        // Ambil token dari SharedPreferences atau dari tempat penyimpanan lainnya
+        val sharedPreferences = getSharedPreferences("sehatin", AppCompatActivity.MODE_PRIVATE)
+        val token = sharedPreferences.getString("token", "")
+
 
         // Inisialisasi ApiService
-        apiService = retrofit.create(ApiService::class.java)
+        apiService = ApiConfig.getApiWithTokenService(token.toString())
 
         // Contoh pemanggilan API getUserInfo
         getUserInfo()

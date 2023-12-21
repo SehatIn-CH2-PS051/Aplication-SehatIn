@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bangkit.sehatin.data.network.retrofit.ApiConfig
 import com.bangkit.sehatin.data.network.retrofit.ApiService
 import okhttp3.ResponseBody
 import org.json.JSONArray
@@ -34,14 +36,13 @@ class FoodListFragment : Fragment() {
         foodAdapter = FoodAdapter()
         recyclerView.adapter = foodAdapter
 
-        // Inisialisasi Retrofit di dalam fragment
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://sehatin-api-64zqryr67a-et.a.run.app")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+        // Ambil token dari SharedPreferences atau dari tempat penyimpanan lainnya
+        val sharedPreferences = requireActivity().getSharedPreferences("sehatin", AppCompatActivity.MODE_PRIVATE)
+        val token = sharedPreferences.getString("token", "")
+
 
         // Inisialisasi ApiService
-        apiService = retrofit.create(ApiService::class.java)
+        apiService = ApiConfig.getApiWithTokenService(token.toString())
 
         // Contoh pemanggilan API getEatLog
         getEatLog()
@@ -55,9 +56,12 @@ class FoodListFragment : Fragment() {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.isSuccessful) {
                     val responseBody = response.body()?.string()
-                    val foodArray = JSONObject(responseBody).getJSONArray("data")
-                    val foodList = parseFoodList(foodArray)
-                    foodAdapter.setData(foodList)
+                    val foodArray = responseBody?.let { JSONObject(it).getJSONArray("data") }
+                    val foodList = foodArray?.let { parseFoodList(it) }
+                    //
+                    if (foodList != null) {
+                        foodAdapter.setData(foodList)
+                    }
                 } else {
                     // Handle error response here
                     val errorMessage = when (response.code()) {
