@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
@@ -26,7 +27,12 @@ class LogActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log)
+        val btnChart : Button = findViewById(R.id.btnLihatChart)
 
+        btnChart.setOnClickListener {
+            val intent = Intent(this, LSTMActivity::class.java)
+            startActivity(intent)
+        }
         // Inisialisasi Retrofit
         val retrofit = Retrofit.Builder()
             .baseUrl("https://sehatin-api-64zqryr67a-et.a.run.app")

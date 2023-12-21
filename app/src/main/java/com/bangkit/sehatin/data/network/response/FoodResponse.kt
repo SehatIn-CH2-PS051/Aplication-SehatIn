@@ -13,6 +13,9 @@ data class FoodResponse(
 	@field:SerializedName("nama")
 	val nama: String? = null,
 
+	@field:SerializedName("image_url")
+	val image_url: String? = null,
+
 	@field:SerializedName("data")
 	val data: List<DataItem?>? = null,
 

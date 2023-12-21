@@ -1,5 +1,6 @@
 package com.bangkit.sehatin.data.network.retrofit
 
+import com.bangkit.sehatin.EatLogData
 import com.bangkit.sehatin.LoginData
 import com.bangkit.sehatin.RegistrationData
 import com.bangkit.sehatin.data.network.response.FoodResponse
@@ -17,7 +18,7 @@ interface ApiService {
     fun logIn(@Body loginData: LoginData): Call<ResponseBody>
 
     @POST("/eat-log")
-    fun EatLog(): Call<ResponseBody>
+    fun eatLog(@Body eatLogData: EatLogData): Call<ResponseBody>
 
     @GET("/user")
     fun getUserInfo(): Call<ResponseBody>
