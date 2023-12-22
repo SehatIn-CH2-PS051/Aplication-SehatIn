@@ -16,9 +16,9 @@
 		tinggi, berat badan, jenis kelamin, dan tanggal lahir untuk menyesuaikan pengalaman Anda.
 	</string>
 	<string name="jenis">Jenis Kelamin</string>
-	<string name="usia">Usia</string>
-	<string name="tinggi">Tinggi</string>
-	<string name="berat">Berat</string>
+	<string name="usia">Usia </string>
+	<string name="tinggi">Tinggi (cm)</string>
+	<string name="berat">Berat (kg)</string>
 	<string name="level_aktivitas">Level Aktivitas</string>
 	<string name="lanjut">Lanjut</string>
 	<string name="menjaga">Menjaga berat \n badan</string>

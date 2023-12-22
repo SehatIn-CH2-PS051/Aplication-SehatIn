@@ -28,12 +28,6 @@ class LogActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log)
-        val btnChart : Button = findViewById(R.id.btnLihatChart)
-
-        btnChart.setOnClickListener {
-            val intent = Intent(this, LSTMActivity::class.java)
-            startActivity(intent)
-        }
         // Ambil token dari SharedPreferences atau dari tempat penyimpanan lainnya
         val sharedPreferences = getSharedPreferences("sehatin", AppCompatActivity.MODE_PRIVATE)
         val token = sharedPreferences.getString("token", "")

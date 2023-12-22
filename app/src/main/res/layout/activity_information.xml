@@ -33,16 +33,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/selamat_dat" />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/gender"
         android:layout_width="109dp"
         android:layout_height="39dp"
         android:layout_marginStart="52dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/edit_text_background"
+        android:dropDownVerticalOffset="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jenisText"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/jenisText" />
+
+    <ImageView
+        android:id="@+id/genderDropdownButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/vector"
+        app:layout_constraintStart_toEndOf="@+id/gender"
+        app:layout_constraintTop_toTopOf="@+id/gender" />
 
     <TextView
         android:id="@+id/usiaText"
@@ -105,10 +115,10 @@
         android:id="@+id/weight"
         android:layout_width="109dp"
         android:layout_height="39dp"
-        android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="72dp"
         android:background="@drawable/edit_text_background"
-        app:layout_constraintStart_toEndOf="@+id/height"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/beratText"
         tools:ignore="MissingConstraints" />
 
@@ -124,29 +134,39 @@
         app:layout_constraintTop_toBottomOf="@+id/height"
         tools:ignore="MissingConstraints" />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/activitylevel"
-        android:layout_width="109dp"
+        android:layout_width="150dp"
         android:layout_height="39dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/edit_text_background"
+        android:dropDownVerticalOffset="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lvlText"
-        tools:ignore="LabelFor,MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/lvlText" />
+
+    <ImageView
+        android:id="@+id/activityLevelDropdownButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/vector"
+        app:layout_constraintStart_toEndOf="@+id/activitylevel"
+        app:layout_constraintTop_toTopOf="@+id/activitylevel" />
 
     <Button
         android:id="@+id/NextStep2"
         android:layout_width="186dp"
         android:layout_height="33dp"
-        android:layout_below="@id/activitylevel"
+        android:layout_below="@id/activityLevelDropdownButton"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="112dp"
         android:layout_marginTop="72dp"
         android:background="@drawable/button_signup"
         android:text="@string/lanjut"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activitylevel"
+        app:layout_constraintTop_toBottomOf="@+id/activityLevelDropdownButton"
         tools:ignore="MissingConstraints" />
 
 
